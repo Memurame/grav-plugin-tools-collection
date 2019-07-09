@@ -1,0 +1,198 @@
+name: Toolbox
+version: 0.0.1
+description: "Tools Sammlung"
+icon: info
+author:
+  name: Tom
+  email: mail@hirter.dev
+  url: https://hirter.dev
+license: MIT
+homepage: https://github.com/Memurame/grav-toolbox
+bugs: https://github.com/Memurame/grav-toolbox
+
+form:
+  validation: strict
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      class: subtle
+      fields:
+        allgemein:
+          type: tab
+          title: "Allgemein"
+          help: "Hallo"
+          fields:
+            enabled:
+              type: toggle
+              label: Plugin Status
+              description: "Status vom ganzen Plugin"
+              default: 1
+              highlight: 1
+              options:
+                1: Enabled
+                0: Disabled
+              validate:
+                type: bool
+            markdown:
+              type: section
+              title: Twig Settings
+              underline: true
+              fields:
+                markdown.enabled:
+                  type: toggle
+                  label: Extended Markdown
+                  highlight: 1
+                  default: 1
+                  options:
+                    1: Enabled
+                    0: Disabled
+                  validate:
+                    type: bool
+                filter.twigextension.enabled:
+                  type: toggle
+                  label: Twig Extensions
+                  highlight: 1
+                  default: 1
+                  options:
+                    1: Enabled
+                    0: Disabled
+                  validate:
+                    type: bool
+                filter.twigextension.modules:
+                  type: selectize
+                  size: large
+                  label: Foldende Extension aktivieren
+                  validate:
+                      type: commalist
+            blueprint:
+              type: section
+              title: Blueprints
+              underline: true
+              fields:
+                pageblueprint.options.enabled:
+                  type: toggle
+                  label: "Optionen"
+                  help: "Anzeigen der Optionen beim erstellen oder bearbeiten einer Seite."
+                  default: 1
+                  highlight: 1
+                  options:
+                    1: Enabled
+                    0: Disabled
+                  validate:
+                    type: bool
+                pageblueprint.advanced.enabled:
+                  type: toggle
+                  label: "Erweitert"
+                  default: 1
+                  highlight: 1
+                  options:
+                    1: Enabled
+                    0: Disabled
+                  validate:
+                    type: bool
+        imageresize:
+          type: tab
+          title: "Bilder verkleinern"
+          fields:
+            imageresize.enabled:
+              type: toggle
+              label: Plugin status
+              highlight: 0
+              default: 0
+              options:
+                1: Enabled
+                0: Disabled
+              validate:
+                type: bool
+            imagesetting:
+              type: section
+              title: Bildbearbeitung
+              underline: true
+              fields:
+                imageresize.adapter:
+                  type: select
+                  label: Bilderbearbeitungs Modul
+                  default: imagick
+                  size: medium
+                  options:
+                    imagick: Imagick
+                    gd: GD
+                imageresize.remove_original:
+                  type: toggle
+                  label: Originalbild entfernen
+                  highlight: 0
+                  default: 0
+                  options:
+                    1: Enabled
+                    0: Disabled
+                  validate:
+                    type: bool
+                imageresize.sizes:
+                  type: list
+                  label: Bilder grössen
+                  collapsed: true
+                  fields:
+                    .width:
+                      type: number
+                      label: Breite
+                      placeholder: 1280
+                      min: 1
+                    .quality:
+                      type: number
+                      label: JPEG Qualität
+                      placeholder: 82
+                      min: 0
+                      max: 100
+                      default: 82
+            usein:
+              type: section
+              title: Anwenden auf folgende Seiten
+              underline: true
+              fields:
+                imageresize.mode:
+                  type: select
+                  label: Anwenden auf...
+                  size: medium
+                  default: alle
+                  options:
+                    all: Alle
+                    ignorelist: Alle ausser ausgewählte
+                    allowlist: Nur ausgewählte
+                imageresize.auswahl:
+                  type: selectize
+                  label: Auswahl
+                  help: "Den Namen des Ordners angeben"
+                  validate:
+                    type: commalist
+        infopanel:
+          type: tab
+          title: "Info Panel"
+          fields:
+            infopanel.enabled:
+              type: toggle
+              label: Info Panel
+              default: 1
+              highlight: 1
+              options:
+                1: Enabled
+                0: Disabled
+              validate:
+                type: bool
+            infopanel.navtitel:
+              type: text
+              label: Navigations Titel
+            infopanel.sitetitel:
+              type: text
+              label: Seiten Titel
+            infopanel.titel:
+              type: text
+              label: Überschrift
+            infopanel.text:
+              type: textarea
+              label: Text
+
+
+
+
+

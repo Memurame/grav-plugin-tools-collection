@@ -1,0 +1,27 @@
+enabled: true
+pageblueprint:
+  enabled: true
+  options:
+    enabled: true
+  advanced:
+    enabled: true
+infopanel:
+  enabled: true
+  text: "Hier kann deine Info stehen die der Kunde sehen sollte."
+  navtitel: 'Info Panel'
+  sitetitel: 'Info'
+  titel: Kontaktinfo
+markdown:
+  enabled: true
+filter:
+  twigextension:
+    enabled: true
+    modules:
+      - array
+      - intl
+      - date
+imageresize:
+  enabled: false
+  adapter: imagick
+  remove_original: false
+  mode: all

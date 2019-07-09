@@ -1,0 +1,23 @@
+{% extends 'partials/base.html.twig' %}
+{% set pconfig = config.plugins['grav-plugin-toolbox'] %}
+
+{% block titlebar %}
+  <div class="button-bar">
+    <a class="button" href="{{ base_url }}"><i class="fa fa-reply"></i> {{ "PLUGIN_ADMIN.BACK"|tu }}</a>
+  </div>
+  <h1><i class="fa fa-fw fa-info"></i> {{ pconfig.infopanel.sitetitel }}</h1>
+
+{% endblock %}
+
+{% block content %}
+  <div class="page-data">
+    <div class="gpm gpm-themes">
+      <h1>
+         {{ pconfig.infopanel.titel }}
+      </h1>
+      <div class="gpm gpm-themes themes card-row grid fixed-blocks pure-g">
+        {{ pconfig.infopanel.text | nl2br }}
+      </div>
+    </div>
+  </div>
+{% endblock %}
