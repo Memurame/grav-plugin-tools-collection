@@ -10,7 +10,7 @@ use RocketTheme\Toolbox\Event\Event;
 require_once 'adapters/imagick.php';
 require_once 'adapters/gd.php';
 
-class GravToolboxPlugin extends Plugin
+class GravPluginToolboxPlugin extends Plugin
 {
   /**
    * @var string
