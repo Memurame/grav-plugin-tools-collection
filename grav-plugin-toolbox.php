@@ -168,35 +168,38 @@ class GravPluginToolboxPlugin extends Plugin
       $continue = false;
       $s = [];
 
-      foreach($route as $index => $splitroute) {
-        foreach ($paths as $path) {
-          $splitpath = explode('/', $path);
-          if ((count($splitpath) - 1) < $index) {
-            $s[$index] = false;
-            continue;
-          }
-
-
-          if ($splitpath[$index] == '*') {
-            $continue = false;
-            for ($i = 0; $i < count($route); $i++) {
-              $s[$i] = true;
+      if($this->getPluginConfigValue('imageresize.mode') != 'all'){
+        foreach($route as $index => $splitroute) {
+          foreach ($paths as $path) {
+            $splitpath = explode('/', $path);
+            if ((count($splitpath) - 1) < $index) {
+              $s[$index] = false;
+              continue;
             }
+
+
+            if ($splitpath[$index] == '*') {
+              $continue = false;
+              for ($i = 0; $i < count($route); $i++) {
+                $s[$i] = true;
+              }
+              break;
+            }
+            if ($splitroute == $splitpath[$index]) {
+              $s[$index] = true;
+              $continue = true;
+            } else {
+              $s[$index] = false;
+              $continue = false;
+            }
+          }
+          if ($continue == false) {
             break;
           }
-          if ($splitroute == $splitpath[$index]) {
-            $s[$index] = true;
-            $continue = true;
-          } else {
-            $s[$index] = false;
-            $continue = false;
-          }
-        }
-        if ($continue == false) {
-          break;
-        }
 
+        }
       }
+
 
 
       if(( $this->getPluginConfigValue('imageresize.mode') == 'ignorelist' && array_sum($s) == count($s) ) ||
