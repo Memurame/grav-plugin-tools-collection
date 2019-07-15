@@ -1,14 +1,14 @@
-name: Toolbox
-version: 0.0.1
-description: "Tools Sammlung"
+name: Smartthings
+version: 0.0.12
+description: "Ansammlung von hilfreichen Werkzeugen"
 icon: info
 author:
   name: Tom
   email: github@hirter.dev
   url: https://hirter.dev
 license: MIT
-homepage: https://github.com/Memurame/grav-plugin-toolbox
-bugs: https://github.com/Memurame/grav-plugin-toolbox
+homepage: https://github.com/Memurame/grav-plugin-smartthings
+bugs: https://github.com/Memurame/grav-plugin-smartthings
 
 form:
   validation: strict
