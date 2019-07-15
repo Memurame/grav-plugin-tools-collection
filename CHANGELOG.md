@@ -9,3 +9,9 @@
 
 1. [](#changed)
     * Rename the repo from grav-toolbox to grav-plugin-toolbox
+    
+# v0.0.12
+## 15.07.2019
+
+1. [](#changed)
+    * Rename the repo from grav-plugin-toolbox to grav-plugin-smartthings

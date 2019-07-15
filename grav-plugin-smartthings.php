@@ -10,7 +10,7 @@ use RocketTheme\Toolbox\Event\Event;
 require_once 'adapters/imagick.php';
 require_once 'adapters/gd.php';
 
-class GravPluginToolboxPlugin extends Plugin
+class GravPluginSmartthingsPlugin extends Plugin
 {
   /**
    * @var string
@@ -147,9 +147,9 @@ class GravPluginToolboxPlugin extends Plugin
     if($this->getPluginConfigValue('infopanel.enabled')){
       $name = $this->getPluginConfigValue('infopanel.navtitel');
       $this->grav['twig']->plugins_hooked_nav[$name] = [
-        'route' => 'toolbox-infopanel',
+        'route' => 'smartthings-infopanel',
         'icon' => 'fa-info',
-        'authorize' => 'toolbox.infopanel'];
+        'authorize' => 'smartthings.infopanel'];
     }
   }
 
@@ -168,35 +168,38 @@ class GravPluginToolboxPlugin extends Plugin
       $continue = false;
       $s = [];
 
-      foreach($route as $index => $splitroute) {
-        foreach ($paths as $path) {
-          $splitpath = explode('/', $path);
-          if ((count($splitpath) - 1) < $index) {
-            $s[$index] = false;
-            continue;
-          }
-
-
-          if ($splitpath[$index] == '*') {
-            $continue = false;
-            for ($i = 0; $i < count($route); $i++) {
-              $s[$i] = true;
+      if($this->getPluginConfigValue('imageresize.mode') != 'all'){
+        foreach($route as $index => $splitroute) {
+          foreach ($paths as $path) {
+            $splitpath = explode('/', $path);
+            if ((count($splitpath) - 1) < $index) {
+              $s[$index] = false;
+              continue;
             }
+
+
+            if ($splitpath[$index] == '*') {
+              $continue = false;
+              for ($i = 0; $i < count($route); $i++) {
+                $s[$i] = true;
+              }
+              break;
+            }
+            if ($splitroute == $splitpath[$index]) {
+              $s[$index] = true;
+              $continue = true;
+            } else {
+              $s[$index] = false;
+              $continue = false;
+            }
+          }
+          if ($continue == false) {
             break;
           }
-          if ($splitroute == $splitpath[$index]) {
-            $s[$index] = true;
-            $continue = true;
-          } else {
-            $s[$index] = false;
-            $continue = false;
-          }
-        }
-        if ($continue == false) {
-          break;
-        }
 
+        }
       }
+
 
 
       if(( $this->getPluginConfigValue('imageresize.mode') == 'ignorelist' && array_sum($s) == count($s) ) ||
@@ -267,7 +270,7 @@ class GravPluginToolboxPlugin extends Plugin
   }
 
   public function registerPermissions() {
-    $this->grav['admin']->addPermissions(['toolbox.infopanel' => 'boolean']);
+    $this->grav['admin']->addPermissions(['smartthings.infopanel' => 'boolean']);
   }
 
   public function onBlueprintCreated(Event $event)
