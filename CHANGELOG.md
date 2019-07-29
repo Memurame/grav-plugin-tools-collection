@@ -15,3 +15,9 @@
 
 1. [](#changed)
     * Rename the repo from grav-plugin-toolbox to grav-plugin-smartthings
+    
+# v0.0.13
+## 15.07.2019
+
+1. [](#fix)
+    * Change the filename of admin template
