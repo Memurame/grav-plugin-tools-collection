@@ -3,7 +3,7 @@ version: 0.0.14
 description: "Ansammlung von hilfreichen Werkzeugen"
 icon: info
 author:
-  name: Tom
+  name: Tom Hirter
   email: github@hirter.dev
   url: https://hirter.dev
 license: MIT
