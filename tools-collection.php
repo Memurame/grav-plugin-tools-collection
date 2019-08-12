@@ -10,7 +10,7 @@ use RocketTheme\Toolbox\Event\Event;
 require_once 'adapters/imagick.php';
 require_once 'adapters/gd.php';
 
-class SmartthingsPlugin extends Plugin
+class ToolsCollectionPlugin extends Plugin
 {
   /**
    * @var string
@@ -147,9 +147,9 @@ class SmartthingsPlugin extends Plugin
     if($this->getPluginConfigValue('infopanel.enabled')){
       $name = $this->getPluginConfigValue('infopanel.navtitel');
       $this->grav['twig']->plugins_hooked_nav[$name] = [
-        'route' => 'smartthings-infopanel',
+        'route' => 'toolscollection-infopanel',
         'icon' => 'fa-info',
-        'authorize' => 'smartthings.infopanel'];
+        'authorize' => 'toolscollection.infopanel'];
     }
   }
 
@@ -270,7 +270,7 @@ class SmartthingsPlugin extends Plugin
   }
 
   public function registerPermissions() {
-    $this->grav['admin']->addPermissions(['smartthings.infopanel' => 'boolean']);
+    $this->grav['admin']->addPermissions(['toolscollection.infopanel' => 'boolean']);
   }
 
   public function onBlueprintCreated(Event $event)
