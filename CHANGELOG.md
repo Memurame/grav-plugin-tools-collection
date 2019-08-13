@@ -1,3 +1,9 @@
+# v0.0.16
+## 13-08-2019
+
+1. [](#bugfix)
+    * Plugin variablename in admin template
+
 # v0.0.17
 ## 13-08-2019
 
