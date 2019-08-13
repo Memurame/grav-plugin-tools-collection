@@ -1,5 +1,5 @@
-name: Tools-Collection
-version: 0.0.16
+name: Tools Collection
+version: 0.0.17
 description: "Ansammlung von hilfreichen Werkzeugen"
 icon: info
 author:
@@ -20,13 +20,11 @@ form:
       fields:
         allgemein:
           type: tab
-          title: "Allgemein"
-          help: "Hallo"
+          title: PLUGIN_TOOLS_COLLECTION.GENERAL.TITLE
           fields:
             enabled:
               type: toggle
-              label: Plugin Status
-              description: "Status vom ganzen Plugin"
+              label: PLUGIN_TOOLS_COLLECTION.GENERAL.STATUS
               default: 1
               highlight: 1
               options:
@@ -36,12 +34,12 @@ form:
                 type: bool
             markdown:
               type: section
-              title: Twig Settings
+              title: PLUGIN_TOOLS_COLLECTION.GENERAL.SECTION_TWIG_SETTINGS
               underline: true
               fields:
                 markdown.enabled:
                   type: toggle
-                  label: Extended Markdown
+                  label: PLUGIN_TOOLS_COLLECTION.GENERAL.EXTENDED_MARKDOWN
                   highlight: 1
                   default: 1
                   options:
@@ -51,7 +49,7 @@ form:
                     type: bool
                 filter.twigextension.enabled:
                   type: toggle
-                  label: Twig Extensions
+                  label: PLUGIN_TOOLS_COLLECTION.GENERAL.TWIG_EXTENSION
                   highlight: 1
                   default: 1
                   options:
@@ -62,7 +60,7 @@ form:
                 filter.twigextension.modules:
                   type: selectize
                   size: large
-                  label: Foldende Extension aktivieren
+                  label: PLUGIN_TOOLS_COLLECTION.GENERAL.ENABLED_EXTETSION
                   validate:
                       type: commalist
             blueprint:
@@ -72,8 +70,7 @@ form:
               fields:
                 pageblueprint.options.enabled:
                   type: toggle
-                  label: "Optionen"
-                  help: "Anzeigen der Optionen beim erstellen oder bearbeiten einer Seite."
+                  label: PLUGIN_TOOLS_COLLECTION.GENERAL.OPTIONS
                   default: 1
                   highlight: 1
                   options:
@@ -83,7 +80,7 @@ form:
                     type: bool
                 pageblueprint.advanced.enabled:
                   type: toggle
-                  label: "Erweitert"
+                  label: PLUGIN_TOOLS_COLLECTION.GENERAL.EXTENDED
                   default: 1
                   highlight: 1
                   options:
@@ -93,11 +90,11 @@ form:
                     type: bool
         imageresize:
           type: tab
-          title: "Bilder verkleinern"
+          title: PLUGIN_TOOLS_COLLECTION.RESIZE.TITLE
           fields:
             imageresize.enabled:
               type: toggle
-              label: Plugin status
+              label: PLUGIN_TOOLS_COLLECTION.RESIZE.STATUS
               highlight: 0
               default: 0
               options:
@@ -107,12 +104,12 @@ form:
                 type: bool
             imagesetting:
               type: section
-              title: Bildbearbeitung
+              title: PLUGIN_TOOLS_COLLECTION.RESIZE.SECTION_IMAGEEDIT
               underline: true
               fields:
                 imageresize.adapter:
                   type: select
-                  label: Bilderbearbeitungs Modul
+                  label: PLUGIN_TOOLS_COLLECTION.RESIZE.MODUL
                   default: imagick
                   size: medium
                   options:
@@ -120,7 +117,7 @@ form:
                     gd: GD
                 imageresize.remove_original:
                   type: toggle
-                  label: Originalbild entfernen
+                  label: PLUGIN_TOOLS_COLLECTION.RESIZE.REMOVE_ORIGINAL
                   highlight: 0
                   default: 0
                   options:
@@ -130,48 +127,48 @@ form:
                     type: bool
                 imageresize.sizes:
                   type: list
-                  label: Bilder grössen
+                  label: PLUGIN_TOOLS_COLLECTION.RESIZE.IMAGE_SIZES
                   collapsed: true
                   fields:
                     .width:
                       type: number
-                      label: Breite
+                      label: PLUGIN_TOOLS_COLLECTION.RESIZE.WIDTH
                       placeholder: 1280
                       min: 1
                     .quality:
                       type: number
-                      label: JPEG Qualität
+                      label: PLUGIN_TOOLS_COLLECTION.RESIZE.QUALITY
                       placeholder: 82
                       min: 0
                       max: 100
                       default: 82
             usein:
               type: section
-              title: Anwenden auf folgende Seiten
+              title: PLUGIN_TOOLS_COLLECTION.RESIZE.SECTION_ENABLED
               underline: true
               fields:
                 imageresize.mode:
                   type: select
-                  label: Anwenden auf...
+                  label: PLUGIN_TOOLS_COLLECTION.RESIZE.TYPE
                   size: medium
                   default: alle
                   options:
-                    all: Alle
-                    ignorelist: Alle ausser ausgewählte
-                    allowlist: Nur ausgewählte
+                    all: PLUGIN_TOOLS_COLLECTION.RESIZE.OPTION_1
+                    ignorelist: PLUGIN_TOOLS_COLLECTION.RESIZE.OPTION_2
+                    allowlist: PLUGIN_TOOLS_COLLECTION.RESIZE.OPTION_3
                 imageresize.auswahl:
                   type: selectize
-                  label: Auswahl
-                  help: "Den Namen des Ordners angeben"
+                  label: PLUGIN_TOOLS_COLLECTION.RESIZE.USE_IN
+                  help: PLUGIN_TOOLS_COLLECTION.RESIZE.USE_IN_HELP
                   validate:
                     type: commalist
         infopanel:
           type: tab
-          title: "Info Panel"
+          title: PLUGIN_TOOLS_COLLECTION.INFOPANEL.TITLE
           fields:
             infopanel.enabled:
               type: toggle
-              label: Info Panel
+              label: PLUGIN_TOOLS_COLLECTION.INFOPANEL.STATUS
               default: 1
               highlight: 1
               options:
@@ -181,16 +178,16 @@ form:
                 type: bool
             infopanel.navtitel:
               type: text
-              label: Navigations Titel
+              label: PLUGIN_TOOLS_COLLECTION.INFOPANEL.NAV_TITLE
             infopanel.sitetitel:
               type: text
-              label: Seiten Titel
+              label: PLUGIN_TOOLS_COLLECTION.INFOPANEL.SITE_TITLE
             infopanel.titel:
               type: text
-              label: Überschrift
+              label: PLUGIN_TOOLS_COLLECTION.INFOPANEL.HEADING
             infopanel.text:
               type: textarea
-              label: Text
+              label: PLUGIN_TOOLS_COLLECTION.INFOPANEL.TEXT
 
 
 

@@ -201,15 +201,20 @@ class ToolsCollectionPlugin extends Plugin
       }
 
 
-
+      /*
+       * Wenn keine Grössen in den EInstellungen angegeben wurden. Abbrechen.
+       */
       if(( $this->getPluginConfigValue('imageresize.mode') == 'ignorelist' && array_sum($s) == count($s) ) ||
         ( $this->getPluginConfigValue('imageresize.mode') == 'allowlist' && array_sum($s) != count($s))){
-        $this->grav['admin']->setMessage('Die Verkleinerung wurde für diesen Inhalt deaktiviert.', 'info');
         return false;
 
       }
+      /*
+       * Wenn der Webserver weder gd noch imagick installiert hat.
+       */
       if (!$this->imageDependencyCheck('imagick') && !$this->imageDependencyCheck('gd')) {
-        $this->grav['admin']->setMessage('Imagick oder GD sind nicht installiert. UM Bilder zu verkleinern muss jedoch eines davon installiert sein..', 'warning');
+        $message = $this->grav['language']->translate('PLUGIN_TOOLS_COLLECTION.MESSAGES.NOMODULE');
+        $this->grav['admin']->setMessage($message, 'warning');
         return false;
       }
 
@@ -246,24 +251,15 @@ class ToolsCollectionPlugin extends Plugin
             $this->resizeImage($source_path, $dest_path[$sIndex], $width, $height, $quality);
           }
 
-          if ($count > 0) {
-            $message = "$filename wurde $count mal verkleinert";
-          }
-
-          if ( !$remove_original ) {
-            $message .= ' (Originales Bild NICHT gelöscht)';
-          } else {
-            $message .= ' (Originales Bild gelöscht)';
+          if ( $remove_original ) {
             unlink($source_path);
             copy($dest_path[0], $source_path);
           }
-
-          if(!empty($message)){
-            $this->grav['admin']->setMessage($message, 'info');
-          }
         }
+        $message = $this->grav['language']->translate('PLUGIN_TOOLS_COLLECTION.MESSAGES.SUCCESS');
+        $this->grav['admin']->setMessage($message, 'info');
       } else {
-        $message = 'Keine Grössen in den Einstellungen angegeben. Bild(er) wurden nicht verkleinert.';
+        $message = $this->grav['language']->translate('PLUGIN_TOOLS_COLLECTION.MESSAGES.NOSIZES');
         $this->grav['admin']->setMessage($message, 'error');
       }
     }

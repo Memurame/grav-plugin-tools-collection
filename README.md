@@ -1,22 +1,22 @@
-# Grav - Hilfreiche Werkzeuge
-Hier eine kleine Ansammlung von hilfreichen Tools welche mir die arbeit mit dem Grav erleichtern.
+# Grav - Helpful tools
+Here is a small collection of helpful tools that make working with the Grav easier.
 
-## Funktionen
-* Erweiterte Markdown Funktionen
-* Einfügen von Blueprints auf Seiten
-* Bilder verkleinern
-* Infobox für Kunden
+## Features
+* Advanced Markdown features
+* Insert blueprints on pages
+* Resize images
+* Info box for customers
 
 ## Installation
-Das Plugin kann per GPM installiert werden oder manuell.
-Wenn du das Admin-Plugin besitzt kannst du dies auch direkt dort installieren.
+The plugin can be installed via GPM or manually.
+If you have the admin plugin, you can install it right there.
 
 ### GPM Installation
-Um das Plugin zu installieren öffnest du Konsole und navigierst in den Ordner wo sich dein Grav befindet.
-Anschliessend gibst du folgenden Befehl ein:
+To install the plugin, open the console and navigate to the folder where your Grav is located.
+Then you enter the following command:
 ```
 bin/gpm install tools-collection
 ```
-Dies installiert das Plugin ins Verzeichniss `/user/plugins`. Die Dateien findet ihr in `/your/site/grav/user/plugins/tools-collection`.
-### Manuelle Installation
-Als erstes ladet ihr das Plugin von diesem Repository herunter. Anschliessend entpackt ihr dies in den Ordner `/user/plugins`. 
+This installs the plugin into the directory `/user/plugins`. Die Dateien findet ihr in `/your/site/grav/user/plugins/tools-collection`.
+### Manual Installation
+First, download the plugin from this repository. Then unpack it into the folder `/user/plugins`. 
