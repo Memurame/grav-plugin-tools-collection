@@ -1,6 +1,7 @@
 name: Tools Collection
-version: 0.0.18
-description: "Ansammlung von hilfreichen Werkzeugen"
+version: 0.0.2
+description: "A collection of tools that make working with Grav easier"
+keywords: "collection, tools, tools-collection, resize, image, blueprints, blueprint"
 icon: info
 author:
   name: Tom Hirter
