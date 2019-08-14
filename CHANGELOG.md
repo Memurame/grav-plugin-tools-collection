@@ -1,5 +1,5 @@
-# v0.0.2
-## 13-08-2019
+# v0.1.0
+## 14-08-2019
 
 1. [](#bugfix)
     * fix changelog version
