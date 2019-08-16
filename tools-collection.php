@@ -383,6 +383,7 @@ class ToolsCollectionPlugin extends Plugin
               'attributes' => array(
                 'href' => '#',
                 'id' => $matches[1],
+                'class' => 'link-cta',
               ),
             ),
           );
