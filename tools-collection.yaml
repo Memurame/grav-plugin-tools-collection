@@ -6,16 +6,16 @@ pageblueprint:
   advanced:
     enabled: true
 infopanel:
-  enabled: true
-  text: "Hier kann deine Info stehen die der Kunde sehen sollte."
-  navtitel: 'Info Panel'
+  enabled: false
+  text: "Here is your info that the customer should see."
+  navtitel: 'Info panel'
   sitetitel: 'Info'
-  titel: Kontaktinfo
+  titel: Contact info
 markdown:
   enabled: true
 filter:
   twigextension:
-    enabled: true
+    enabled: false
     modules:
       - array
       - intl

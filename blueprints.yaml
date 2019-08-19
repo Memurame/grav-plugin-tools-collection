@@ -1,5 +1,5 @@
 name: Tools Collection
-version: 0.1.1
+version: 0.1.2
 description: "A collection of tools that make working with Grav easier"
 keywords: "collection, tools, tools-collection, resize, image, blueprints, blueprint"
 icon: info
@@ -51,8 +51,8 @@ form:
                 filter.twigextension.enabled:
                   type: toggle
                   label: PLUGIN_TOOLS_COLLECTION.GENERAL.TWIG_EXTENSION
-                  highlight: 1
-                  default: 1
+                  highlight: 0
+                  default: 0
                   options:
                     1: Enabled
                     0: Disabled
@@ -170,8 +170,8 @@ form:
             infopanel.enabled:
               type: toggle
               label: PLUGIN_TOOLS_COLLECTION.INFOPANEL.STATUS
-              default: 1
-              highlight: 1
+              default: 0
+              highlight: 0
               options:
                 1: Enabled
                 0: Disabled

@@ -1,3 +1,10 @@
+# v0.1.2
+## 16-08-2019
+
+1. [](#improved)
+    * change default settings
+    * update language
+
 # v0.1.1
 ## 16-08-2019
 
