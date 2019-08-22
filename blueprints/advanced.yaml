@@ -43,13 +43,8 @@ form:
                     header.body_classes:
                       type: text
                       label: PLUGIN_ADMIN.BODY_CLASSES
-                    header.page_container:
-                      type: select
-                      label: "Page Container"
-                      default: default
-                      options:
-                        container: "container"
-                        container-fluid: "container-fluid"
+
+
                 column2:
                   type: column
 

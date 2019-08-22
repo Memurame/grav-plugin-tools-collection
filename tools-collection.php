@@ -275,14 +275,6 @@ class ToolsCollectionPlugin extends Plugin
 
     if($this->getPluginConfigValue('pageblueprint.options.enabled')) {
       if (0 === strpos($newtype, 'modular/')) {
-        $blueprint = $event['blueprint'];
-        if ($blueprint->get('form/fields/tabs', null, '/')) {
-
-          $blueprints = new Blueprints(__DIR__ . '/blueprints/');
-          $extends = $blueprints->get('optionswithorder');
-          $blueprint->extend($extends, true);
-
-        }
       } else {
         $blueprint = $event['blueprint'];
         if ($blueprint->get('form/fields/tabs', null, '/')) {
