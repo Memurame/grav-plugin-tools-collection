@@ -1,12 +1,11 @@
 name: Tools Collection
-version: 0.1.3
+version: 0.1.4
 description: "A collection of tools that make working with Grav easier"
 keywords: "collection, tools, tools-collection, resize, image, blueprints, blueprint"
 icon: info
 author:
-  name: Tom Hirter
-  email: github@hirter.dev
-  url: https://hirter.dev
+  name: Thomas Anderson
+  email: mr.anderson@onixmail.ch
 license: MIT
 homepage: https://github.com/Memurame/grav-plugin-tools-collection
 bugs: https://github.com/Memurame/grav-plugin-tools-collection

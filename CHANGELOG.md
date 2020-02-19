@@ -1,3 +1,10 @@
+# v0.1.4
+## 19-02-2020
+
+1. [](#bugfix)
+    * fixed algorithm (resize images)
+1. [](#new)
+    * Set characters which are not allowed
 # v0.1.3
 ## 21-08-2019
 

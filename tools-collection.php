@@ -164,48 +164,37 @@ class ToolsCollectionPlugin extends Plugin
     if($this->getPluginConfigValue('imageresize.enabled')) {
 
       $paths = $this->getPluginConfigValue('imageresize.auswahl');
-      $route = explode('/', $page->route());
+      $route = array_filter(explode('/', $page->route()));
       $continue = false;
-      $s = [];
 
       if($this->getPluginConfigValue('imageresize.mode') != 'all'){
-        foreach($route as $index => $splitroute) {
-          foreach ($paths as $path) {
-            $splitpath = explode('/', $path);
-            if ((count($splitpath) - 1) < $index) {
-              $s[$index] = false;
-              continue;
-            }
-
+        foreach ($paths as $path) {
+          $splitpath = array_filter(explode('/', $path));
+          if (count($route) < (count($splitpath))) {
+            continue;
+          }
+          foreach($splitpath as $index => $split){
 
             if ($splitpath[$index] == '*') {
-              $continue = false;
-              for ($i = 0; $i < count($route); $i++) {
-                $s[$i] = true;
-              }
-              break;
+              $continue = true;
+              break 2;
             }
-            if ($splitroute == $splitpath[$index]) {
-              $s[$index] = true;
+
+            if ($route[$index] == $splitpath[$index]) {
               $continue = true;
             } else {
-              $s[$index] = false;
               $continue = false;
+              break;
             }
           }
-          if ($continue == false) {
-            break;
-          }
-
         }
       }
 
-
       /*
-       * Wenn keine Grössen in den EInstellungen angegeben wurden. Abbrechen.
+       * Wenn keine Grössen in den Einstellungen angegeben wurden. Abbrechen.
        */
-      if(( $this->getPluginConfigValue('imageresize.mode') == 'ignorelist' && array_sum($s) == count($s) ) ||
-        ( $this->getPluginConfigValue('imageresize.mode') == 'allowlist' && array_sum($s) != count($s))){
+      if(( $this->getPluginConfigValue('imageresize.mode') == 'ignorelist' && $continue ) ||
+        ( $this->getPluginConfigValue('imageresize.mode') == 'allowlist' && !$continue)){
         return false;
 
       }
